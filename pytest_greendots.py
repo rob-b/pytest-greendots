@@ -6,6 +6,11 @@ t = Terminal()
 
 def pytest_report_teststatus(report):
     if report.when == 'call':
+        if hasattr(report, 'wasxfail'):
+            if report.skipped:
+                return "xfailed", t.yellow(u"."), "xfail"
+            elif report.failed:
+                return "xpassed", t.yellow("."), "XPASS"
         if report.passed:
             letter = t.green(u".")
         elif report.skipped:
