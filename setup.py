@@ -11,7 +11,7 @@ setup(
     license='MIT',
     description='Green progress dots',
     long_description=read("README.rst"),
-    version='0.1',
+    version='0.3',
     py_modules=['pytest_greendots'],
     entry_points={'pytest11': ['greendots = pytest_greendots']},
     install_requires=['pytest>=2.0', 'blessings'],
